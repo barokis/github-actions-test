@@ -31,5 +31,5 @@ if __name__ == '__main__':
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
         server.login(USERNAME,PASSWORD)
         for row in val['values']:
-            server.sendmail(USERNAME,row[1],row[2])
+            server.sendmail(USERNAME,row[1],f"Subject: test\n\n{row[2]}")
 
