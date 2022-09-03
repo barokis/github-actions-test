@@ -1,5 +1,6 @@
 
-import json, os
+import json, os, datetime
+from zoneinfo import ZoneInfo
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
@@ -26,6 +27,7 @@ def get_values(spreadsheet_id, range_name):
 
 
 if __name__ == '__main__':
+    print(datetime.datetime.today(ZoneInfo('Europe/Vilnius')))
     val = get_values(spreadsheet_id, "A:C")
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
