@@ -3,7 +3,7 @@ name: send-email
 on:
   schedule:
   - cron: '*/5 * * * *'
-  workflow_dispatch:
+  #workflow_dispatch:
 
 jobs:
   build:
