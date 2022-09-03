@@ -27,7 +27,7 @@ def get_values(spreadsheet_id, range_name):
 
 
 if __name__ == '__main__':
-    print(datetime.datetime.today(ZoneInfo('Europe/Vilnius')))
+    print(datetime.datetime.now(ZoneInfo('Europe/Vilnius')))
     val = get_values(spreadsheet_id, "A:C")
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
